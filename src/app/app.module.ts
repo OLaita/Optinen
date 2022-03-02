@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { OcrComponent } from './ocr/ocr.component';
+import * as Tesseract from 'tesseract.js'
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OcrComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Tesseract from 'tesseract.js';
+// import { createWorker } from 'tesseract.js';
+
 
 @Component({
   selector: 'app-ocr',
@@ -8,14 +10,41 @@ import * as Tesseract from 'tesseract.js';
 })
 export class OcrComponent implements OnInit {
 
-  
+  ocrResult = 'Recognizing...';
+  title = 'tesseract.js-angular-app';
 
-  constructor() { }
+  constructor() {
+    //this.doOCR();
+   }
 
   ngOnInit(): void {
   }
 
-  test(){
+  test2(){
+    console.log("pepsi");
+    Tesseract
+    .recognize('https://tesseract.projectnaptha.com/img/eng_bw.png')
+    .then((res: any) => {
+        console.log(res.data.text);
+        this.ocrResult = res.data.text;
+    })
+    .catch(console.error);
+  }
+
+  /*async doOCR() {
+    const worker = createWorker({
+      logger: m => console.log(m),
+    });
+    await worker.load();
+    await worker.loadLanguage('eng');
+    await worker.initialize('eng');
+    const { data: { text } } = await worker.recognize('https://jeroen.github.io/images/testocr.png');
+    this.ocrResult = text;
+    console.log(text);
+    await worker.terminate();
+  }*/
+
+  /*test(){
 
     console.log("patata");
 
@@ -27,6 +56,6 @@ export class OcrComponent implements OnInit {
       console.log(text);
     })
 
-  }
+  }*/
 
 }

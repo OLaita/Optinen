@@ -2,12 +2,12 @@
 <!-- <br><br><a (click)="test2()">soy subnormal</a> -->
 
 <br><br>
-<input #imageInput type="file" accept="image/*" (change)="processFile(imageInput)"/>
+<input #imageInput type="file" accept="image/*" (change)="ocr(imageInput)"/>
 <div style="text-align:center">
     <h1>
       Welcome to {{ title }}!
     </h1>
-    <img src="https://tesseract.projectnaptha.com/img/eng_bw.png" width="50%" />
+    <app-render-img></app-render-img>
     <h2>Result: </h2>
     <p class="rec">
       {{ ocrResult }}

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Tesseract from 'tesseract.js';
+import { RenderImgComponent } from '../render-img/render-img.component';
 // import { createWorker } from 'tesseract.js';
 
 
@@ -13,8 +14,8 @@ export class OcrComponent implements OnInit {
   ocrResult = 'Recognizing...';
   title = 'tesseract.js-angular-app';
   rec = false;
-
-  constructor(/*public file: File*/) {
+  file: any = null;
+  constructor(private ri:RenderImgComponent) {
     //this.doOCR();
    }
 
@@ -22,13 +23,13 @@ export class OcrComponent implements OnInit {
   }
 
 
-  processFile(imageInput: any){
-    
-    const file: File = imageInput.files[0];
-    console.log("pepsi");
+  ocr(imageInput: any){
+    this.ri.preview(imageInput);
+    this.file = imageInput.files[0];
+    console.log(this.file.name);
 
     Tesseract
-    .recognize(file)
+    .recognize(this.file)
     .then((res: any) => {
         // console.log(res.data.text);
         this.ocrResult = res.data.text;

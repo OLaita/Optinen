@@ -14,20 +14,23 @@ export class OcrComponent implements OnInit {
   title = 'tesseract.js-angular-app';
   rec = false;
 
-  constructor() {
+  constructor(/*public file: File*/) {
     //this.doOCR();
    }
 
   ngOnInit(): void {
   }
 
-  ocr(){
-    this.rec = true;
+
+  processFile(imageInput: any){
+    
+    const file: File = imageInput.files[0];
     console.log("pepsi");
+
     Tesseract
-    .recognize('https://tesseract.projectnaptha.com/img/eng_bw.png')
+    .recognize(file)
     .then((res: any) => {
-        console.log(res.data.text);
+        // console.log(res.data.text);
         this.ocrResult = res.data.text;
     })
     .catch(console.error);

@@ -1,14 +1,16 @@
 
-<br><br><a (click)="test2()">soy subnormal</a>
+<!-- <br><br><a (click)="test2()">soy subnormal</a> -->
 
 <br><br>
+<input type="file"/>
 <div style="text-align:center">
     <h1>
       Welcome to {{ title }}!
     </h1>
     <img src="https://tesseract.projectnaptha.com/img/eng_bw.png" width="50%" />
     <h2>Result: </h2>
-    <p>
+    <br><br><a (click)="ocr()">soy subnormal</a>
+    <p *ngIf="rec">
       {{ ocrResult }}
     </p>
   </div>

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as Tesseract from 'tesseract.js';
-import { RenderImgComponent } from '../render-img/render-img.component';
-// import { createWorker } from 'tesseract.js';
-
+// import * as Tesseract from 'tesseract.js';
+import Tesseract from 'tesseract.js';
 
 @Component({
   selector: 'app-ocr',
@@ -11,12 +9,14 @@ import { RenderImgComponent } from '../render-img/render-img.component';
 })
 export class OcrComponent implements OnInit {
 
-  ocrResult = 'Recognizing...';
-  title = 'tesseract.js-angular-app';
+  ocrResult = 'Reconociendo...';
+  title = 'Optinen';
   rec = false;
   file: any = null;
-  constructor(private ri:RenderImgComponent) {
-    //this.doOCR();
+  prog: string = "";
+
+  constructor() {
+    
    }
 
   ngOnInit(): void {
@@ -24,17 +24,36 @@ export class OcrComponent implements OnInit {
 
 
   ocr(imageInput: any){
-    this.ri.preview(imageInput);
+    this.rec = true;
     this.file = imageInput.files[0];
-    console.log(this.file.name);
 
-    Tesseract
-    .recognize(this.file)
+    this.ocrResult = "Reconociendo...";
+
+
+    Tesseract.recognize(
+      this.file,
+      'eng+spa',
+      { logger: m =>  this.prog = m.progress}
+    ).then(({ data: { text } }) => {
+      console.log(text);
+      this.ocrResult = text;
+    })
+
+    /*(async () => {
+      await worker.load();
+      await worker.loadLanguage('eng+spa');
+      await worker.initialize('eng+spa');
+      const { data: { text } } = await worker.recognize('https://tesseract.projectnaptha.com/img/eng_bw.png');
+      console.log(text);
+      await worker.terminate();
+    })();*/
+
+    /*.recognize(this.file)
+    .progress(p => console.log('progress', p))
     .then((res: any) => {
-        // console.log(res.data.text);
         this.ocrResult = res.data.text;
     })
-    .catch(console.error);
+    .catch(console.error);*/
   }
 
 }

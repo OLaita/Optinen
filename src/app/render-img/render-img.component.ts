@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OcrComponent } from '../ocr/ocr.component';
 
 @Component({
   selector: 'app-render-img',
@@ -10,7 +11,10 @@ export class RenderImgComponent implements OnInit {
   imgURL: any;
   message: string = "";
 
-  constructor() {  }
+  constructor(private ocr:OcrComponent) {  }
+  
+  ngOnInit(): void {
+  }
 
   preview(file:any) {
     if (file.files.length === 0)
@@ -21,16 +25,15 @@ export class RenderImgComponent implements OnInit {
       this.message = "Only images are supported.";
       return;
     }
+
+    this.ocr.ocr(file);
  
     var reader = new FileReader();
-    reader.onload = (e:any) => { 
-      this.imgURL = e.target.result; 
-      (<HTMLInputElement>document.getElementById("try")).src=this.imgURL;
-    }
     reader.readAsDataURL(file.files[0]);
+    reader.onload = (e:any) => { 
+      this.imgURL = e.target.result;
+    }
   }
-  
-  ngOnInit(): void {
-  }
+
 
 }

@@ -2,14 +2,16 @@
 <!-- <br><br><a (click)="test2()">soy subnormal</a> -->
 
 <br><br>
-<input #imageInput type="file" accept="image/*" (change)="ocr(imageInput)"/>
-<div style="text-align:center">
+<div class="dOcr">
     <h1>
-      Welcome to {{ title }}!
+      Bienvenido a {{ title }}!
     </h1>
     <app-render-img></app-render-img>
     <h2>Result: </h2>
-    <p class="rec">
+
+    
+    <p class="rec" *ngIf="rec">
+      <progress max="1" value="{{prog}}">  </progress><br>
       {{ ocrResult }}
     </p>
   </div>

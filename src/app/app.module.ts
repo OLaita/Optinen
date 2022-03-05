@@ -7,6 +7,7 @@ import { OcrComponent } from './ocr/ocr.component';
 // import * as Tesseract from 'tesseract.js';
 import { RenderImgComponent } from './render-img/render-img.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ColorTComponent } from './color-t/color-t.component';
 
 
 
@@ -14,14 +15,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     OcrComponent,
-    RenderImgComponent
+    RenderImgComponent,
+    ColorTComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [RenderImgComponent],
+  providers: [RenderImgComponent,ColorTComponent,OcrComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

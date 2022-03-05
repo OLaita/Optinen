@@ -5,8 +5,8 @@
     </h1>
     <app-render-img></app-render-img>
     <h2>Result: </h2>
-    <div *ngFor="let item of colorPallete">
-        <p>{{item}}</p>
-    </div>
+    <ul>
+        <li class="color" *ngFor="let item of colors" [ngStyle]="{'background-color': item}"></li>
+    </ul>
 
   </div>

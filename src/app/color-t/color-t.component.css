@@ -1,0 +1,24 @@
+.rec{
+    display: block;
+    max-width: 60vw;
+    text-align: center;
+}
+
+
+.dOcr{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.color{
+    width: 100px;
+    height: 50px;
+    padding: 0;
+}
+
+ul{
+    list-style:none;
+    padding: 0;
+}

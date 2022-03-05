@@ -8,14 +8,16 @@
     </h1>
     <app-render-img></app-render-img>
     <h2>Result: </h2>
+
+    <button mat-fab class="mat-tooltip-panel-above" color="primary" aria-label="Copy" matTooltip="Copy">
+      <i class="fa-regular fa-copy fa-2xl"></i>
+    </button>
         
     <div class="rec" *ngIf="rec">
       <progress max="1" value="{{prog}}">  </progress><br>
       <p>{{ ocrResult }}</p>
 
-      <button *ngIf="copy" mat-fab class="mat-tooltip-panel-above" color="primary" aria-label="Copy" matTooltip="Copy">
-        <i class="fa-regular fa-copy fa-2xl"></i>
-      </button>
+      
       
     </div>
   </div>

@@ -8,7 +8,10 @@ import { OcrComponent } from './ocr/ocr.component';
 import { RenderImgComponent } from './render-img/render-img.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ColorTComponent } from './color-t/color-t.component';
-
+import { ClipboardModule } from 'ngx-clipboard';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {MatButtonModule} from '@angular/material/button';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -21,7 +24,11 @@ import { ColorTComponent } from './color-t/color-t.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ClipboardModule,
+    FontAwesomeModule,
+    MatButtonModule,
+    MatTooltipModule
   ],
   providers: [RenderImgComponent,ColorTComponent,OcrComponent],
   bootstrap: [AppComponent]

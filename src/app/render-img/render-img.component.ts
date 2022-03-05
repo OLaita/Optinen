@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OcrComponent } from '../ocr/ocr.component';
 import { ColorTComponent } from '../color-t/color-t.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-render-img',
@@ -12,12 +13,13 @@ export class RenderImgComponent implements OnInit {
   imgURL: any;
   message: string = "";
 
-  constructor(private ocr:OcrComponent, private imageT:ColorTComponent) {  }
+  constructor(private ocr:OcrComponent, private imageT:ColorTComponent, private router: Router) {  }
   
   ngOnInit(): void {
   }
 
-  preview(file:any,type:string) {
+  preview(file:any) {
+    
     if (file.files.length === 0)
       return;
  
@@ -25,20 +27,18 @@ export class RenderImgComponent implements OnInit {
     if (mimeType.match(/image\/*/) == null) {
       this.message = "Only images are supported.";
       return;
-    }
-    
-    
+    }    
  
     var reader = new FileReader();
     reader.readAsDataURL(file.files[0]);
     reader.onload = (e:any) => { 
       this.imgURL = e.target.result;
-      if(type=="img"){
+      if(this.router.url=="/imgT"){
         this.imageT.getCFI(this.imgURL);
       }
     }
 
-    if(type=="ocr"){
+    if(this.router.url=="/ocr"){
       this.ocr.ocr(file);
     }
     

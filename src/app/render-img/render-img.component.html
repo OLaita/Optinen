@@ -1,8 +1,8 @@
 
 <div class="dImg">
-    <input #imageInput type="file" accept="image/*" (change)="preview(imageInput,'img')"/><br>
+    <input #imageInput type="file" accept="image/*" (change)="preview(imageInput)"/><br>
 
-    <img [src]="imgURL" height="200" >
+    <img [src]="imgURL" height="200" *ngIf="imgURL"/>
     
     <p *ngIf="{message}">{{message}}</p>
 </div>

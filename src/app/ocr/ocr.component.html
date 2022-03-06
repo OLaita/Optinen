@@ -13,7 +13,7 @@
       <progress max="1" value="{{prog}}">  </progress><br>
       <p>{{ ocrResult }}</p>
 
-      <button *ngIf="copy" mat-fab class="mat-tooltip-panel-above" color="primary" aria-label="Copy" matTooltip="Copy">
+      <button (click)="copyText()" *ngIf="copy" mat-fab class="mat-tooltip-panel-above" color="primary" aria-label="Copy" matTooltip="Copy">
         <i class="fa-regular fa-copy fa-2xl"></i>
       </button>
       

@@ -6,7 +6,7 @@
     <app-render-img></app-render-img>
     <h2>Result: </h2>
     <ul>
-        <li class="color" *ngFor="let item of colors" [ngStyle]="{'background-color': item}"></li>
+        <li *ngFor="let item of colors" class="color mat-tooltip-panel-right" matTooltipPosition="right" aria-label="Copy" matTooltip="Copy Color" [ngStyle]="{'background-color': item}" (click)="copyText(item)"></li>
     </ul>
 
   </div>

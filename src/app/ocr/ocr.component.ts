@@ -29,7 +29,6 @@ export class OcrComponent implements OnInit {
     this.clip.copyFromContent(this.ocrResult)
   }
 
-
   ocr(imageInput: any){
     this.rec = true;
     this.copy = false;

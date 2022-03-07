@@ -13,6 +13,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
+import { NavComponent } from './nav/nav.component'
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
 
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from '../environments/environment';
@@ -28,7 +31,8 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
     AppComponent,
     OcrComponent,
     RenderImgComponent,
-    ColorTComponent
+    ColorTComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -38,13 +42,14 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
     MatButtonModule,
     MatTooltipModule,
     MatIconModule,
+    MatProgressBarModule,
     MatToolbarModule,
     AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase())
   ],
-  providers: [RenderImgComponent,ColorTComponent,OcrComponent],
+  providers: [RenderImgComponent,ColorTComponent,OcrComponent,NavComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

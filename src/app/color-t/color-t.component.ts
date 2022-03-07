@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 const { getPaletteFromURL } = require('color-thief-node');
 import { ClipboardService } from 'ngx-clipboard';
@@ -13,6 +14,7 @@ export class ColorTComponent implements OnInit {
   title = 'Optinen';
   file: any = null;
   colors:any = [];
+  colorShow:boolean = true;
   
   constructor(private clip: ClipboardService) { }
 
@@ -20,10 +22,12 @@ export class ColorTComponent implements OnInit {
     }
 
     getCFI(imageURL:any){
+
       (async () => {
         this.colorPallete = await getPaletteFromURL(imageURL);
         console.log('Color Pallete:\n', this.colorPallete);
         this.ColorToHex(this.colorPallete);
+        this.colorShow = true;
       })();
     }
   

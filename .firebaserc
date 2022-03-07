@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "optinen-eb5e5": {
+      "hosting": {
+        "Optinen": [
+          "optinen-eb5e5"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "optinen-eb5e5"
+  }
+}

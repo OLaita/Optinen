@@ -12,14 +12,23 @@ export class RenderImgComponent implements OnInit {
 
   imgURL: any;
   message: string = "";
+  visible:boolean = true;
 
   constructor(private ocr:OcrComponent, private imageT:ColorTComponent, private router: Router) {  }
   
   ngOnInit(): void {
   }
 
+  visible2(){
+    this.imageT.colors = [];
+    this.imageT.colorShow = false;
+    this.visible = true;
+    this.ocr.rec = false;
+    this.imgURL = null;
+  }
+
   preview(file:any) {
-    
+    this.visible = false;
     if (file.files.length === 0)
       return;
  

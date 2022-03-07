@@ -1,8 +1,12 @@
 
 <div class="dImg">
-    <input #imageInput type="file" accept="image/*" (change)="preview(imageInput)"/><br>
-
-    <img [src]="imgURL" height="200" *ngIf="imgURL"/>
-    
+    <input #imageInput id="file" type="file" name="file" accept="image/*" (change)="preview(imageInput)" class="inputfile"/><br>
+    <label *ngIf="visible" id="point" for="file">Selecciona una imagen</label>
+    <div id="divImg">
+        <img [src]="imgURL" height="350" *ngIf="imgURL"/>
+        <button class="button-54" role="button" *ngIf="!visible" (click)="visible2()">
+            <mat-icon>repeat</mat-icon>
+        </button>
+    </div>
     <p *ngIf="{message}">{{message}}</p>
 </div>

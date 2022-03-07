@@ -1,19 +1,13 @@
-
-<!-- <br><br><a (click)="test2()">soy subnormal</a> -->
-
 <br><br>
 <div class="dOcr">
-    <h1>
-      Bienvenido a {{ title }}!
-    </h1>
     <app-render-img></app-render-img>
-    <h2>Result: </h2>
+    <h2 *ngIf="rec" id="out">RESULTADO</h2>
         
     <div class="rec" *ngIf="rec">
-      <progress max="1" value="{{prog}}">  </progress><br>
+      <mat-progress-bar mode="indeterminate" max="1" value="{{prog}}" *ngIf="bar"></mat-progress-bar><br>
       <p>{{ ocrResult }}</p>
 
-      <button *ngIf="copy" mat-fab class="mat-tooltip-panel-above" color="primary" aria-label="Copy" matTooltip="Copy">
+      <button class="button-54" role="button" *ngIf="copy" (click)="copyText()" aria-label="Copy" matTooltip="Copy">
         <i class="fa-regular fa-copy fa-2xl"></i>
       </button>
       

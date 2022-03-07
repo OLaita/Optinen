@@ -4,6 +4,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signInWithRedirect,
   signOut,
 } from '@angular/fire/auth';
 
@@ -21,7 +22,7 @@ export class AuthService {
   }
 
   loginWithGoogle() {
-    return signInWithPopup(this.auth, new GoogleAuthProvider());
+    return signInWithRedirect(this.auth, new GoogleAuthProvider());
   }
 
   register({ email, password }: LoginData) {

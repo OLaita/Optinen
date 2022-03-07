@@ -18,7 +18,6 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {}
 
   login(loginData: LoginData) {
-    console.log("Hola");
     this.authService
       .login(loginData)
       .then(() => this.router.navigate(['/dashboard']))

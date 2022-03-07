@@ -11,7 +11,9 @@ import { ColorTComponent } from './color-t/color-t.component';
 import { ClipboardModule } from 'ngx-clipboard';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatIconModule} from '@angular/material/icon'
+import {MatIconModule} from '@angular/material/icon';
+import { NavComponent } from './nav/nav.component'
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import {MatIconModule} from '@angular/material/icon'
     AppComponent,
     OcrComponent,
     RenderImgComponent,
-    ColorTComponent
+    ColorTComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -28,9 +31,10 @@ import {MatIconModule} from '@angular/material/icon'
     ClipboardModule,
     MatButtonModule,
     MatTooltipModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressBarModule
   ],
-  providers: [RenderImgComponent,ColorTComponent,OcrComponent],
+  providers: [RenderImgComponent,ColorTComponent,OcrComponent,NavComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

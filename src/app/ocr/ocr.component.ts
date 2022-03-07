@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import Tesseract from 'tesseract.js';
 import { ClipboardService } from 'ngx-clipboard';
 
+
 @Component({
   selector: 'app-ocr',
   templateUrl: './ocr.component.html',
@@ -16,6 +17,7 @@ export class OcrComponent implements OnInit {
   file: any = null;
   prog: string = "";
   copy: boolean = false;
+  bar: boolean = true;
 
 
   constructor(private clip: ClipboardService) {
@@ -29,13 +31,13 @@ export class OcrComponent implements OnInit {
     this.clip.copyFromContent(this.ocrResult)
   }
 
-
   ocr(imageInput: any){
+    this.bar = true;
     this.rec = true;
     this.copy = false;
     this.file = imageInput.files[0];
 
-    this.ocrResult = "Reconociendo...";
+    this.ocrResult = "";
 
 
     Tesseract.recognize(
@@ -44,6 +46,7 @@ export class OcrComponent implements OnInit {
       { logger: m =>  this.prog = m.progress}
     ).then(({ data: { text } }) => {
       console.log(text);
+      this.bar = false;
       this.ocrResult = text;
       this.copy = true;
     })

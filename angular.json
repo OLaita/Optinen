@@ -101,6 +101,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "Optinen:build:production",
+            "firebaseProject": "optinen-eb5e5",
+            "firebaseHostingSite": "optinen-eb5e5"
+          }
         }
       }
     }

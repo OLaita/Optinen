@@ -16,7 +16,7 @@ body {
 #logoTitulo{
     font-family: 'Vollkorn', serif;
     font-size: 50px;
-    color: #555B6E;
+    color: #555B6E !important;
 }
 
 #dNav{

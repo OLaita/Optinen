@@ -1,7 +1,7 @@
 <br><br>
 <div class="dOcr">
     <app-render-img></app-render-img>
-    <ul *ngIf="colorShow">
+    <ul id="paleta" *ngIf="colorShow">
         <li *ngFor="let item of colors" class="color mat-tooltip-panel-right" matTooltipPosition="below" aria-label="Copy" matTooltip="Copy Color" [ngStyle]="{'background-color': item}" (click)="copyText(item)"></li>
     </ul>
 

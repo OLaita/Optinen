@@ -43,5 +43,15 @@ li:active {
   @media (min-width: 768px) {
     li {
       padding: 0.25em 0.75em;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 768px){
+    #paleta{
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
     }
   }

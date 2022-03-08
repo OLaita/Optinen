@@ -11,9 +11,12 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {}
 
+  bool:boolean = false;
+
   ngOnInit(): void {}
 
   logout() {
+    this.bool = false;
     this.authService
       .logout()
       .then(() => this.router.navigate(['/']))

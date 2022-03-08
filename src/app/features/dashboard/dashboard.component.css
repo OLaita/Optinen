@@ -1,21 +1,81 @@
 
 h1 {
-    color: #5eccd6;
+    color: #555B6E;
     font-size: 50px;
-    font-weight: bolder;
+    font-weight: 400;
   }
   
   h2 {
     color: #698893;
     margin-bottom: 50px;
   }
-  
+
   a {
-    color: #5eccd6;
+    color: #555B6E;
     border-bottom: 2px solid transparent;
     transition: 0.5s border-bottom;
   }
-  
+
+  #capsulas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 65vw;
+    margin-top: 10vh;
+  }
+
+  @media only screen and (max-width: 1550px) {
+    #capsulas{
+      justify-content: center;
+    }
+
+    #b1{
+      margin-bottom: 50px;
+    }
+
+
+  }
+
+  #capsulas p{
+    color: white;
+    background-color: #555B6E;
+    padding: 80px 80px;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+  }
+
+  #b1:hover{
+    cursor: pointer;
+  }
+
+  #b2:hover{
+    cursor: pointer;
+  }
+
+  #b1 p{
+    border-radius: 0px 0px 15px 15px;
+  }
+
+  #b1 img{
+    border-radius: 15px 15px 0px 0px ;
+  }
+
+  #b2 p{
+    
+    border-radius: 15px 15px 0px 0px ;
+  }
+
+  #b2 img{
+    border-radius: 0px 0px 15px 15px;
+  }
+
+  img{
+    width: 500px;
+    height: 300px;
+  }
+
   mat-toolbar {
     background-color: transparent;
     display: flex;
@@ -28,12 +88,12 @@ h1 {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 64px);
-    padding-top: 10%;
+    
+    padding-top: 7%;
   }
   
   .btn {
-    background-color: #5eccd6;
+    background-color: #555B6E;
     border-radius: 20px;
     color: #fff;
     padding: 10px 30px;
@@ -42,10 +102,10 @@ h1 {
   }
   
   a:hover {
-    border-bottom: 2px solid #5eccd6;
+    border-bottom: 2px solid #555B6E;
     cursor: pointer;
   }
   
   .btn:hover {
-    background-color: #52b7c0;
+    background-color: #555B6E;
   }

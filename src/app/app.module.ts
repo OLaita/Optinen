@@ -1,3 +1,4 @@
+import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -49,7 +50,7 @@ import { provideDatabase,getDatabase } from '@angular/fire/database';
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase())
   ],
-  providers: [RenderImgComponent,ColorTComponent,OcrComponent,NavComponent],
+  providers: [RenderImgComponent,ColorTComponent,OcrComponent,NavComponent,DashboardComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

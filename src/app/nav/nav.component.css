@@ -2,3 +2,18 @@
     text-decoration: none;
     color: #555B6E !important;
 }
+
+#logout{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    color: white;
+    background-color: #555B6E;
+    font-size: 17px;
+    margin: 0;
+    padding: 3px 10px;
+    border-radius: 5px;
+}
+
+#logout:hover{
+    cursor: pointer;
+}

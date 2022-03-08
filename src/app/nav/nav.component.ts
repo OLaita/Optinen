@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardComponent } from '../features/dashboard/dashboard.component';
+
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
@@ -7,7 +8,8 @@ import { DashboardComponent } from '../features/dashboard/dashboard.component';
 })
 export class NavComponent implements OnInit {
 
-  constructor(private dash:DashboardComponent) { }
+  constructor(public dash:DashboardComponent) { }
+
 
   logOut(){
     this.dash.logout();

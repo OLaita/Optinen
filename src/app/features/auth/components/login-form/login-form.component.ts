@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { DashboardComponent } from 'src/app/features/dashboard/dashboard.component';
 
 @Component({
   selector: 'ngbytes-login-form',
@@ -14,7 +15,7 @@ export class LoginFormComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,public dash:DashboardComponent) {}
 
   ngOnInit(): void {
     this.form = this.fb.group({
@@ -33,5 +34,6 @@ export class LoginFormComponent implements OnInit {
 
   onSubmit() {
     this.formData.emit(this.form.value);
+    this.dash.bool = true;
   }
 }

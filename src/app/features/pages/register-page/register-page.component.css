@@ -5,7 +5,7 @@ a {
   }
   
   h1 {
-    color: #5eccd6;
+    color: #555B6E;
     font-weight: bolder;
     margin-bottom: 20px;
   }
@@ -40,7 +40,7 @@ a {
   
   .text-container {
     align-items: center;
-    background-color: #5eccd6;
+    background-color: #555B6E;
     border-radius: 0 10px 10px 0;
     color: #fff;
     display: flex;
